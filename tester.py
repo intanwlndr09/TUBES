@@ -96,45 +96,7 @@ class Dinosaurus:
     def tampil(self, layar):
         layar.blit(self.gambar, (self.dino_hit.x, self.dino_hit.y))
 
-class Rintangan:
-    def __init__(self, gambar, type):
-        self.gambar = gambar
-        self.jenis = type
-        self.hit = self.gambar[self.jenis].get_rect()
-        self.hit_x = 1100
-         
-    def update(self):
-        self.hit.x -= kecepatan
-        if self.hit.x < -self.hit.width:
-            rintangan.pop()
 
-    def tampil(self, layar):
-        layar.blit(self.gambar[self.jenis], self.hit)
-
-class KaktusKecil(Rintangan):
-    def __init__(self, gambar):
-        self.jenis = random.randint(0, 2)
-        super().__init__(gambar, self.jenis)
-        self.hit.y = 325
-
-class KaktusBesar(Rintangan):
-    def __init__(self, gambar):
-        self.jenis = random.randint(0, 2)
-        super().__init__(gambar, self.jenis)
-        self.hit.y = 300
-
-class Burung(Rintangan):
-    def __init__(self, gambar):
-        self.jenis = 0
-        super().__init__(gambar, self.jenis)
-        self.hit.y = 250
-        self.indeks = 0
-    
-    def tampil (self, layar):
-        if self.indeks >= 9:
-            self.indeks = 0 
-        layar.blit(self.gambar[self.indeks // 5], self.hit)
-        self.indeks += 1
 
 class Awan:
     def __init__(self):
