@@ -1,6 +1,6 @@
 import pygame
 import os
-import random 
+import random
 
 pygame.init()
 #untuk layar
